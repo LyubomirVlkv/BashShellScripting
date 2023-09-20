@@ -11,11 +11,9 @@ echo "3. Multiplication"
 echo "4. Division"
 read -p "Enter your option: " option
 echo "======================================="
-if [[ -n ${a//[0-9]} ]] || [[ -n ${b//[0-9]} ]]
+if [[ $a =~ ^[+-]?[0-9]+$ ]] || [[ $b =~ ^[+-]?[0-9]+$ ]] || [[ $a =~ ^[+-]?[0-9]+\.?[0-9]*$ ]] || [[ $b =~ ^[+-]?[0-9]+\.?[0-9]*$ ]]
 then
-        echo "The first unput: $a and/or the second input: $b is not an integer"
-else
-        case $option in
+         case $option in
             1)
                 echo "You selected addition"
                 echo "The addition of $a and $b is: $(bc<<<"scale=3;$a+$b")"
@@ -35,6 +33,8 @@ else
             *)
                 echo "You selected invalid option"
                 ;;
-
 esac
+
+else
+        echo "The first unput: $a and/or the second input: $b is not an integer"
 fi
