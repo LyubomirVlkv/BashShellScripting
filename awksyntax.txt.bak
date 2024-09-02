@@ -1,5 +1,0 @@
-Syntax of AWK script
-
-awk 'BEGIN {start_action} pattern/condition {action to perform on each line} END {stop_action} filename
-
-awk -f awk_script.awk filename

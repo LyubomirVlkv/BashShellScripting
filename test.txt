@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-test.txt
-=======
-asd
-
->>>>>>> origin/master
